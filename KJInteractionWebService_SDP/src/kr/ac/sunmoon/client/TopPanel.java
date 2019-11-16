@@ -1,7 +1,10 @@
 package kr.ac.sunmoon.client;
 
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -14,25 +17,38 @@ public class TopPanel extends HorizontalPanel {
 		super();
 		this.addStyleName("hpTop");
 		this.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
-	
-		HorizontalPanel hpNameBox = new HorizontalPanel();
-		hpNameBox.getElement().getStyle().setWidth(256, Unit.PX);
-		this.add(hpNameBox);
 		
-		final TextBox txtSearch = new TextBox();
-		hpNameBox.add(txtSearch);
-//		int mainWidth = vpMain.getOffsetWidth();
-//		int optionWidth = lboxOption.getOffsetWidth();
-//		txtSearch.setWidth((mainWidth - optionWidth) + "px");
+//		Image imgLogo = new Image();
+//		imgLogo.setUrl("image/kj_flag.jpg");
+//		imgLogo.addStyleName("imgLogo");
+//		this.add(imgLogo);
+//		
+		HorizontalPanel hpSearch = new HorizontalPanel();
+		hpSearch.addStyleName("hpSearch");
+		this.add(hpSearch);
 		
-		final HorizontalPanel hploginBox = new HorizontalPanel();
-		hploginBox.getElement().getStyle().setWidth(256, Unit.PX);
-		this.add(hploginBox);
+		txtSearch = new TextBox();
+		txtSearch.setStyleName("txtSearch");
+		hpSearch.add(txtSearch);
 		
-		final HorizontalPanel hpTotalMenu = new HorizontalPanel();
-		hpTotalMenu.getElement().getStyle().setWidth(256, Unit.PX);
-		this.add(hpTotalMenu);
+//		Image imgSearch = new Image();
+//		imgSearch.setUrl("image/search.png");
+//		imgSearch.setStyleName("imgSearch");
+//		hpSearch.add(imgSearch);
+//		
+		Button loginBtn = new Button("Log in");
+		loginBtn.setStyleName("loginBtn");
+		hpSearch.add(loginBtn);
 		
+		ListBox menuLb = new ListBox();
+		menuLb.addItem("Main Page");
+		menuLb.addItem("Chatting Page");
+		menuLb.addItem("Advertising Page");
+		menuLb.setVisibleItemCount(1);
+		menuLb.setStyleName("menuLb");
+		this.add(menuLb);
+		
+		//imgSearch implement here.
 	}
 
 }
